@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>مواقيت الصلاة</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="header">
+        <div>
+          <p class="eyebrow">مواقيت اليوم</p>
+          <h1>مواقيت الصلاة</h1>
+        </div>
+        <span class="crescent" aria-hidden="true">☾</span>
+      </header>
+
+      <form id="search-form" class="search-form">
+        <label class="sr-only" for="city-input">ابحث عن مدينة أو مكان</label>
+        <input
+          id="city-input"
+          type="search"
+          placeholder="ابحث عن مدينة أو مكان"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" aria-label="بحث">⌕</button>
+      </form>
+
+      <button id="locate-button" class="locate-button" type="button">
+        استخدم موقعي الحالي
+      </button>
+      <p id="status" class="status" role="status" aria-live="polite">
+        ابحث عن مدينة أو استخدم موقعك لعرض المواقيت.
+      </p>
+
+      <section class="times" aria-label="مواقيت الصلاة">
+        <div class="times-heading">
+          <h2 id="place-name">اختر موقعك</h2>
+          <span id="date-label" class="date-label"></span>
+        </div>
+        <div id="prayer-list" class="prayer-list">
+          <p class="empty-state">ستظهر المواقيت هنا.</p>
+        </div>
+      </section>
+
+      <footer>
+        <label for="method-select">طريقة الحساب</label>
+        <select id="method-select">
+          <option value="3">رابطة العالم الإسلامي</option>
+          <option value="4">أم القرى</option>
+          <option value="2">الجمعية الإسلامية لأمريكا الشمالية</option>
+          <option value="5">الهيئة المصرية العامة للمساحة</option>
+        </select>
+        <p>
+          خريطة الأماكن من
+          <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>
+          · المواقيت من
+          <a href="https://aladhan.com/prayer-times-api" target="_blank">Aladhan</a>
+        </p>
+      </footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b3028" />
+    <title>مواقيت الصلاة</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">على خطى يومك</p>
+        <h1>مواقيت الصلاة</h1>
+        <p class="intro">اعرف مواقيت الصلاة في مدينتك، أينما كنت.</p>
+      </header>
+
+      <section class="location-panel" aria-label="اختيار الموقع">
+        <form id="search-form" class="search-form">
+          <label class="sr-only" for="city-input">ابحث عن مدينة أو مكان</label>
+          <input
+            id="city-input"
+            name="city"
+            type="search"
+            placeholder="ابحث عن مدينة أو مكان"
+            autocomplete="off"
+            required
+          />
+          <button type="submit">بحث</button>
+        </form>
+        <button id="locate-button" class="location-button" type="button">
+          استخدم موقعي الحالي
+        </button>
+        <p id="status" class="status" role="status" aria-live="polite">
+          ابحث عن مدينة أو شارك موقعك لعرض المواقيت.
+        </p>
+      </section>
+
+      <section class="content-grid" aria-label="مواقيت الصلاة والموقع">
+        <section class="times-panel" aria-labelledby="times-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">مواقيت اليوم</p>
+              <h2 id="times-title">اختر موقعك</h2>
+            </div>
+            <label class="method-control" for="method-select">
+              طريقة الحساب
+              <select id="method-select">
+                <option value="3">رابطة العالم الإسلامي</option>
+                <option value="4">أم القرى</option>
+                <option value="2">الجمعية الإسلامية لأمريكا الشمالية</option>
+                <option value="5">الهيئة المصرية العامة للمساحة</option>
+              </select>
+            </label>
+          </div>
+          <p id="date-label" class="date-label">—</p>
+          <div id="prayer-list" class="prayer-list">
+            <p class="empty-state">ستظهر مواقيت الصلاة هنا بعد تحديد الموقع.</p>
+          </div>
+          <p class="attribution">
+            بيانات المكان والخريطة من
+            <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>.
+            مواقيت الصلاة من
+            <a href="https://aladhan.com/prayer-times-api" target="_blank" rel="noreferrer">Aladhan</a>.
+          </p>
+        </section>
+        <section class="map-panel" aria-label="الخريطة">
+          <div id="map"></div>
+          <p class="map-caption">حرّك الخريطة لمشاهدة موقعك</p>
+        </section>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

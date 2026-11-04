@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "مواقيت الصلاة",
+  "description": "اعرض مواقيت الصلاة حسب موقعك أو مدينتك.",
+  "version": "1.0.0",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://nominatim.openstreetmap.org/*",
+    "https://api.aladhan.com/*"
+  ],
+  "action": {
+    "default_title": "مواقيت الصلاة",
+    "default_popup": "popup.html"
+  }
+}
